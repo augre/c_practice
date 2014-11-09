@@ -24,7 +24,8 @@ int main(){
   int x=1;
   int y=2;
   char szoveg[10]="szoveg\n";
-  int a[3][2];
+  int a[3][2]= {1,2,3,4,5,6};
+  int* p=&a[0][0];
 
   printf("x is %d, y is %d\n", x, y);
   Swap(&x,&y);
@@ -47,14 +48,15 @@ int main(){
   /*this is passing by reference too, because the effect 
   of the funtion exists in the caller after the function exited*/
   g(a);
-  /*this one works*/
   printf("%d\n",a[2][0]);
-  /*these ones don't*/
-  printf("%d\n",a[4]);
-  printf("%d\n",a[2]+0);
-  printf("%d\n", *(a+2));
-  
-  
+//  an array is not a pointer, it has to be converted into a pointer
+//  in order to be able to use it like that.
+  printf("the address of a[0][0]=%p, value is %d\n", &a[0][0], *p);
+  printf("the address of a[0][1]=%p, value is %d\n", &a[0][1], *(p+1));
+  printf("the address of a[1][0]=%p, value is %d\n", &a[1][0], *(p+2));
+  printf("the address of a[1][1]=%p, value is %d\n", &a[1][1], *(p+3));
+  printf("the address of a[2][0]=%p, value is %d\n", &a[2][0], *(p+4));
+  printf("the address of a[2][1]=%p, value is %d\n", &a[2][1], *(p+5));
 
 
   return 0;
