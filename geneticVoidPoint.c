@@ -2,9 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-/*when a function must modify a pointer passed into it,
- * when I want to change what a pointer points to
-*/
+
 
 //generic swap, with generic pointers
 

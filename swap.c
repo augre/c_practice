@@ -57,6 +57,13 @@ int main(){
   printf("the address of a[1][1]=%p, value is %d\n", &a[1][1], *(p+3));
   printf("the address of a[2][0]=%p, value is %d\n", &a[2][0], *(p+4));
   printf("the address of a[2][1]=%p, value is %d\n", &a[2][1], *(p+5));
+//or
+  printf("the address of a[0][0]=%p, value is %d\n", &a[0][0], *(*a));
+  printf("the address of a[0][1]=%p, value is %d\n", &a[0][1], *(*a+1));
+  printf("the address of a[1][0]=%p, value is %d\n", &a[1][0], *(*a+2));
+  printf("the address of a[1][1]=%p, value is %d\n", &a[1][1], *(*a+3));
+  printf("the address of a[2][0]=%p, value is %d\n", &a[2][0], *(*a+4));
+  printf("the address of a[2][1]=%p, value is %d\n", &a[2][1], *(*a+5));
 
 
   return 0;
